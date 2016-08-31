@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+#set -e
 
 GITLAB_CLONE_URL=https://github.com/gitlabhq/gitlabhq.git
 GITLAB_SHELL_URL=https://gitlab.com/gitlab-org/gitlab-shell/repository/archive.tar.gz
@@ -15,11 +15,11 @@ BUILD_DEPENDENCIES="gcc g++ make patch pkg-config cmake paxctl \
 
 ## Execute a command as GITLAB_USER
 exec_as_git() {
-  if [[ $(whoami) == ${GITLAB_USER} ]]; then
-    $@
-  else
-    sudo -HEu ${GITLAB_USER} "$@"
-  fi
+#  if [[ $(whoami) == ${GITLAB_USER} ]]; then
+#    $@
+#  else
+#    sudo -HEu ${GITLAB_USER} "$@"
+#  fi
 }
 
 # install build dependencies for gem installation
